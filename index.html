@@ -1,0 +1,1241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University of Miami | B.S. in Data Analytics</title>
+  <meta name="description" content="DAISI landing page (UM-themed)." />
+  <meta name="referrer" content="origin" />
+
+  <style>
+    :root{
+      /* UM-ish palette */
+      --green:#0b3d2e;
+      --green-2:#0a2f25;
+      --orange:#f26a21;
+      --cream:#f5f1ea;
+      --ink:#123;
+      --muted:#58606a;
+      --line:rgba(17,34,51,.12);
+
+      --card:#ffffff;
+      --shadow: 0 14px 30px rgba(0,0,0,.18);
+      --radius: 14px;
+
+      --max: 1120px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Stag Sans", "Frutiger", Arial, sans-serif;
+      color:#18222e;
+      background: var(--cream);
+      line-height:1.5;
+    }
+    a{color:inherit}
+    img{max-width:100%; display:block}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+
+    /* ====== Header ====== */
+    .topbar{
+      background: rgba(245,241,234,.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0,0,0,.08);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding: 12px 0;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      min-width: 220px;
+    }
+    .umMark{
+      width:42px; height:42px;
+      border-radius:10px;
+      background:
+        linear-gradient(90deg, var(--orange) 0 22%, #fff0 22%),
+        linear-gradient(0deg, #fff0 0 60%, rgba(0,0,0,.06) 60% 100%),
+        var(--green);
+      box-shadow: 0 10px 18px rgba(0,0,0,.12);
+      border: 1px solid rgba(0,0,0,.08);
+    }
+    .brandText strong{
+      display:block;
+      font-size:16px;
+      letter-spacing:.2px;
+      color:#163a2f;
+    }
+    .brandText span{
+      display:block;
+      font-size:14px;
+      color:#4d5b56;
+    }
+
+    .links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .links a{
+      text-decoration:none;
+      color:#1e3a2f;
+      font-size:14px;
+      font-weight:600;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    .links a:hover{background: rgba(11,61,46,.06)}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      padding: 10px 14px;
+      border-radius: 12px;
+      font-weight:800;
+      font-size:14px;
+      border:1px solid rgba(0,0,0,.10);
+      background:#fff;
+      text-decoration:none;
+      box-shadow: 0 10px 18px rgba(0,0,0,.10);
+      white-space:nowrap;
+    }
+    .btn.orange{
+      background: var(--orange);
+      border-color: rgba(0,0,0,.08);
+      color:#fff;
+    }
+    .btn.green{
+      background: var(--green);
+      border-color: rgba(0,0,0,.08);
+      color:#fff;
+    }
+
+    /* ===== New Hero (like welcome.miami.edu) ===== */
+    .heroNew{
+    position:relative;
+    width:100%;
+    min-height: 480px;
+    background:
+        linear-gradient(180deg, rgba(0,0,0,.36), rgba(0,0,0,.32)),
+        url("https://drive.google.com/thumbnail?id=1GK3XHzDNa2gw9tC5Xt-3URE-v2DHzeha") center/cover no-repeat; 
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    }
+
+    .heroNew .heroOverlay{
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,.36);
+    }
+
+    .heroContent{
+    position:relative;
+    text-align:center;
+    color:#fff;
+    padding: 0 20px;
+    max-width: 72ch;
+    }
+
+    .heroContent h1{
+    font-size: 40px;
+    font-weight:800;
+    margin: 0 0 12px;
+    }
+
+    .heroContent p{
+    font-size: 16px;
+    margin: 0 0 20px;
+    opacity:.90;
+    }
+
+    .heroActions{
+    display:flex;
+    gap: 14px;
+    justify-content:center;
+    flex-wrap:wrap;
+    }
+
+    .heroActions .btn{
+    padding: 12px 20px;
+    font-size:14px;
+    }
+
+    .btn.orange{
+    background: var(--orange);
+    color:#fff;
+    }
+    .btn.green{
+    background: var(--green);
+    color:#fff;
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+    .heroContent h1{font-size: 38px;}
+    .heroContent p{font-size:16px;}
+    .heroActions .btn{width:100%; justify-content:center;}
+    }
+
+
+    /* ====== Section Headings (centered w/ lines) ====== */
+    .section{
+      padding: 34px 0;
+      background: var(--cream);
+    }
+    .sectionAlt{
+      background: linear-gradient(180deg, rgba(255,255,255,.55), rgba(255,255,255,.0));
+    }
+    .titleRow{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom: 14px;
+    }
+    .titleRow .line{
+      height:1px;
+      flex:1;
+      background: rgba(0,0,0,.12);
+    }
+    .titleRow h2{
+      margin:0;
+      font-family: "Stag Sans", "Frutiger", Arial, sans-serif;
+      color:#1b3b31;
+      font-size: 28px;
+      letter-spacing:.2px;
+    }
+    .centerNote{
+      text-align:center;
+      color: var(--muted);
+      margin: 0 auto 18px;
+      max-width: 80ch;
+      font-size: 14px;
+    }
+
+    /* ====== About facts row ====== */
+    .facts{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .fact{
+      background: #ffffffc9;
+      border:1px solid rgba(0,0,0,.10);
+      border-radius: var(--radius);
+      padding: 14px;
+      box-shadow: 0 10px 18px rgba(0,0,0,.08);
+      display:flex;
+      gap:12px;
+      align-items:flex-start;
+    }
+    .icon{
+      width:42px; height:42px;
+      border-radius: 12px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(242,106,33,.10);
+      color: var(--orange);
+      flex:0 0 auto;
+    }
+    .fact strong{display:block; color:#1b3b31; font-size:13px}
+    .fact span{display:block; color:var(--muted); font-size:13px; margin-top:3px}
+
+
+
+/* ===== Why Choose (2-column video + text) ===== */
+  .whyTwoCol{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 16px;
+  }
+
+  .whyCol{
+    display:flex;
+    flex-direction:column;
+    gap: 10px;
+  }
+
+  /* Reuse videoCard + videoWrap if already defined */
+  .videoCard{
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: var(--radius);
+    box-shadow: 0 14px 30px rgba(0,0,0,.14);
+    overflow:hidden;
+  }
+
+  .videoWrap{
+    position:relative;
+    width:100%;
+    padding-top:56.25%; /* 16:9 */
+    background:#000;
+  }
+
+  .videoWrap iframe{
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+  }
+
+  /* Text box under video */
+  .whyBox{
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: var(--radius);
+    padding: 16px;
+    box-shadow: 0 10px 18px rgba(0,0,0,.10);
+  }
+
+  .whyBox h3{
+    margin:0 0 6px;
+    font-size: 16px;
+    color:#15372d;
+  }
+
+  .whyBox p{
+    margin:0;
+    font-size: 14px;
+    color: var(--muted);
+    line-height:1.55;
+  }
+
+  /* Responsive */
+  @media (max-width: 980px){
+    .whyTwoCol{
+      grid-template-columns: 1fr;
+    }
+  }
+
+
+
+
+
+
+    /* ====== Featured Students band (image strip) ====== */
+    .band{
+      position:relative;
+      padding: 34px 0;
+      background:
+        url("campus.jpg") center/cover no-repeat;
+    }
+    .band.noimg{
+      background:
+        radial-gradient(1200px 520px at 50% 20%, rgba(242,106,33,.18), transparent 60%),
+        linear-gradient(135deg, rgba(11,61,46,.80), rgba(11,61,46,.55));
+    }
+    .band::before{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35));
+    }
+    .band .wrap{position:relative}
+    .bandTitle{
+      text-align:center;
+      font-family: "Stag Sans", "Frutiger", Arial, sans-serif;
+      color:#fff;
+      font-size: 28px;
+      margin: 0 0 16px;
+      text-shadow: 0 10px 30px rgba(0,0,0,.35);
+    }
+    .students{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      align-items:stretch;
+    }
+    .student{
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.12);
+      border-radius: 14px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.22);
+      overflow:hidden;
+      text-align:center;
+    }
+    .avatar{
+      height: 420px;
+      background: #e9e2d7;
+      position:relative;
+    }
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+    .student .pad2{padding: 12px 12px 14px}
+    .student strong{display:block; color:#15372d}
+    .student span{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+
+    /* ====== Outcomes + Curriculum ====== */
+    .split{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 12px;
+      align-items:stretch;
+    }
+
+    .panel{
+      background: rgba(255,255,255,.92);
+      border:1px solid rgba(0,0,0,.10);
+      border-radius: var(--radius);
+      box-shadow: 0 14px 30px rgba(0,0,0,.12);
+      overflow:hidden;
+    }
+    .panelHead{
+      padding: 12px 14px;
+      border-bottom:1px solid rgba(0,0,0,.10);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      background: rgba(255,255,255,.88);
+    }
+    .panelHead h3{
+      margin:0;
+      font-family: "Stag Sans", "Frutiger", Arial, sans-serif;
+      font-size: 18px;
+      color:#15372d;
+    }
+    .panelBody{padding: 14px}
+
+    .outcomesGrid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .metric{
+      border:1px solid rgba(0,0,0,.10);
+      border-radius: 12px;
+      padding: 12px;
+      background:#fff;
+      text-align:center;
+    }
+    .metric strong{
+      display:block;
+      font-size: 26px;
+      color: var(--orange);
+      letter-spacing:.3px;
+    }
+    .metric span{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .employers{
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(0,0,0,.10);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color:#2a3a3f;
+      font-size:12px;
+    }
+    .logos{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+      opacity:.9;
+    }
+    .logoPill{
+      padding: 6px 10px;
+      border-radius: 999px;
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(11,61,46,.06);
+      font-weight:800;
+      color:#15372d;
+      font-size: 12px;
+    }
+
+    .currList{
+      margin: 0;
+      padding: 0;
+      list-style:none;
+      border:1px solid rgba(0,0,0,.10);
+      border-radius: 12px;
+      overflow:hidden;
+      background:#fff;
+    }
+    .currList li{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding: 12px 12px;
+      border-top:1px solid rgba(0,0,0,.08);
+      font-weight:700;
+      color:#1f3b31;
+      font-size: 13px;
+    }
+    .currList li:first-child{border-top:none}
+    .chev{opacity:.55}
+    .currBtnRow{margin-top:16px; display:flex; justify-content:center}
+
+    /* ====== Final CTA band ====== */
+    .finalCTA{
+      background: linear-gradient(180deg, rgba(11,61,46,.92), rgba(11,61,46,.96));
+      color:#fff;
+      padding: 30px 0;
+    }
+    .finalCTA h2{
+      margin:0;
+      font-family: "Stag Sans", "Frutiger", Arial, sans-serif;
+      text-align:center;
+      font-size: 28px;
+    }
+    .finalCTA p{
+      margin: 6px auto 14px;
+      text-align:center;
+      max-width: 70ch;
+      color: rgba(255,255,255,.84);
+      font-size: 13px;
+    }
+    .finalCTA .ctaRow{
+      display:flex;
+      justify-content:center;
+      gap: 12px;
+      flex-wrap:wrap;
+      margin-top: 12px;
+    }
+    .btn.outline{
+      background: transparent;
+      border-color: rgba(255,255,255,.35);
+      color:#fff;
+      box-shadow:none;
+    }
+
+    /* ====== Footer ====== */
+    .footer{
+      background: var(--green-2);
+      color: rgba(255,255,255,.86);
+      padding: 18px 0;
+      font-size: 12px;
+    }
+    .footGrid{
+      display:grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      gap: 12px;
+      align-items:start;
+    }
+    .footTitle{font-weight:900; margin-bottom:8px}
+    .footLinks a{
+      color: rgba(255,255,255,.86);
+      text-decoration:none;
+      display:block;
+      margin: 6px 0;
+    }
+    .footLinks a:hover{ text-decoration:underline }
+    .social{
+      display:flex; gap:8px; flex-wrap:wrap; margin-top:8px;
+    }
+    .soc{
+      width:34px; height:34px;
+      border-radius: 10px;
+      border:1px solid rgba(255,255,255,.22);
+      display:grid;
+      place-items:center;
+      color:#fff;
+      text-decoration:none;
+      background: rgba(255,255,255,.06);
+    }
+
+    /* ====== Responsive ====== */
+    @media (max-width: 980px){
+      .heroInner{grid-template-columns: 1fr}
+      .heroRight{justify-content:flex-start}
+      .facts{grid-template-columns: 1fr}
+      .tiles{grid-template-columns: 1fr 1fr}
+      .students{grid-template-columns: 1fr}
+      .split{grid-template-columns: 1fr}
+      .outcomesGrid{grid-template-columns: 1fr}
+      .footGrid{grid-template-columns: 1fr}
+      .heroTitle{font-size: 38px}
+      .heroTitle small{font-size: 22px}
+    }
+    @media (max-width: 560px){
+      .links{gap:10px}
+      .tiles{grid-template-columns: 1fr}
+      .heroTitle{font-size: 34px}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div class="topbar">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#">
+          <div class="umMark" aria-hidden="true"></div>
+          <div class="brandText">
+            <strong>UNIVERSITY of MIAMI</strong>
+            <span>DAISI Program</span>
+          </div>
+        </a>
+
+        <div class="links" aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#curriculum">Curriculum</a>
+          <a href="#impacts">Impacts</a>
+          <a href="#contact">Contact</a>
+          <a class="btn orange" href="#apply">Apply Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Hero  -->
+<header class="heroNew" id="top">
+    <div class="heroOverlay"></div>
+  
+    <div class="heroContent wrap">
+      <h1>Data Analytics & Intelligence for Social Impact B.S. (DAISI)</h1>
+      <p> Transform data into decisions that drive meaningful change. </p>
+  
+      <div class="heroActions">
+        <a class="btn orange" href="#apply">Apply Now</a>
+        <a class="btn green" href="#contact">Request Info</a>
+      </div>
+    </div>
+  </header>
+  
+
+  <!-- About (picture-style cards) -->
+  <section class="section sectionAlt" id="about">
+    <div class="wrap">
+      <div class="titleRow">
+        <div class="line"></div>
+        <h2>About the Program</h2>
+        <div class="line"></div>
+      </div>
+  
+      <p class="centerNote">
+        Our <b>DAISE</b> program prepare you with skills to analyze and contextualize data for responsible, impactful outcomes —
+        through hands-on projects, modern tools, and close mentoring.
+      </p>
+  
+      <div class="aboutCards">
+        <!-- Card 1 -->
+        <article class="aboutCard">
+          <div class="aboutMedia">
+            <!-- Replace with your image -->
+            <img src="Images/ORION_bg.png" alt="Students collaborating on data analytics projects"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('aboutMediaFallback');" />
+            <div class="aboutOverlay">
+              <div class="aboutTag"> Contextualized Learning</div>
+              <h3> Collaborative & Interdisciplinary </h3>
+              <p> Customize your studies with a selection of courses drawn from various disciplines across education, health, and community systems.</p>
+              <a class="aboutBtn" href="https://bulletin.miami.edu/undergraduate-academic-programs/education-human-development/educational-psychological-studies/data-analytics-and-intelligence-bs/#text">Explore Curriculum <span aria-hidden="true">›</span></a>
+            </div>
+          </div>
+        </article>
+  
+        <!-- Card 2 -->
+        <article class="aboutCard">
+          <div class="aboutMedia">
+            <img src="Images/Data_analytics.jpg" alt="Faculty mentoring students in a lab setting"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('aboutMediaFallback');" />
+            <div class="aboutOverlay">
+              <div class="aboutTag">Close Mentoring</div>
+              <h3>Learn from Expert Faculty</h3>
+              <p>Get guidance from outstanding researchers and practitioners working at the cutting edge of analytics, AI and Social Impacts.</p>
+              <a class="aboutBtn" href="https://www.edu.miami.edu/people/faculty/index.html">Meet Our Faculty <span aria-hidden="true">›</span></a>
+            </div>
+          </div>
+        </article>
+  
+        <!-- Card 3 -->
+        <article class="aboutCard">
+          <div class="aboutMedia">
+            <img src="Images/image3.png" alt="Campus skyline and student life"
+                 onerror="this.style.display='none'; this.parentElement.classList.add('aboutMediaFallback');" />
+            <div class="aboutOverlay">
+              <div class="aboutTag">Real Impact</div>
+              <h3>By Students, For Students </h3>
+              <p> Build your network, skillsets and hands-on experience through collaboration, internships, competitions, and more.</p>
+              <a class="aboutBtn" href="https://news.miami.edu/edu/stories/2026/01/daisi-student-spotlight.html">Meet Our Students <span aria-hidden="true">›</span></a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <style> 
+  /* ===== About (picture cards) ===== */
+  .aboutCards{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 14px;
+  }
+  
+  .aboutCard{
+    border-radius: var(--radius);
+    overflow:hidden;
+    box-shadow: 0 14px 30px rgba(0,0,0,.14);
+    border: 1px solid rgba(0,0,0,.10);
+    background: rgba(255,255,255,.92);
+  }
+  
+  .aboutMedia{
+    position:relative;
+    height: 260px;
+    background: #e9e2d7;
+  }
+  
+  .aboutMedia img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  
+  /* If image missing, show a branded fallback */
+  .aboutMediaFallback{
+    background:
+      radial-gradient(900px 380px at 20% 20%, rgba(242,106,33,.22), transparent 60%),
+      radial-gradient(900px 380px at 80% 0%, rgba(11,61,46,.22), transparent 60%),
+      linear-gradient(135deg, rgba(255,255,255,.65), rgba(255,255,255,.20));
+  }
+  
+  .aboutMedia::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background: linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,.55) 100%);
+  }
+  
+  .aboutOverlay{
+    position:absolute;
+    left: 14px;
+    right: 14px;
+    bottom: 14px;
+    color:#fff;
+    z-index:1;
+  }
+  
+  .aboutTag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(11,61,46,.75);
+    border: 1px solid rgba(255,255,255,.22);
+    margin-bottom: 8px;
+  }
+  
+  .aboutOverlay h3{
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: .2px;
+  }
+  
+  .aboutOverlay p{
+    margin: 6px 0 10px;
+    font-size: 13px;
+    color: rgba(255,255,255,.88);
+    max-width: 46ch;
+  }
+  
+  .aboutBtn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    font-weight: 900;
+    font-size: 13px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: rgba(242,106,33,.92);
+    border: 1px solid rgba(255,255,255,.22);
+    box-shadow: 0 12px 22px rgba(0,0,0,.22);
+    color:#fff;
+  }
+  
+  .aboutBtn:hover{
+    filter: brightness(1.02);
+  }
+  
+  /* Responsive */
+  @media (max-width: 980px){
+    .aboutCards{ grid-template-columns: 1fr; }
+    .aboutMedia{ height: 240px; }
+  }
+  
+  </style> 
+
+
+  <!-- Why Choose Our Program (2-column video stories) -->
+  <section class="section" id="why">
+    <div class="wrap">
+      <div class="titleRow">
+        <div class="line"></div>
+        <h2>Why Choose Our Program?</h2>
+        <div class="line"></div>
+      </div>
+
+      <p class="centerNote">
+        Our Mission: Producing Decision-Makers Who Drive Change
+
+      <div class="whyTwoCol">
+        <!-- LEFT COLUMN -->
+        <div class="whyCol">
+          <div class="videoCard">
+            <div class="videoWrap">
+              <!-- Replace VIDEO_ID_1 -->
+              <iframe
+                src="https://www.youtube.com/embed/video#1"
+                title="Hands-on Learning Video"
+                frameborder="0"
+                referrerpolicy='strict-origin-when-cross-origin'>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="whyBox">
+            <h3> Collaborative, Interdisciplinary & Customizable Program </h3>
+            <p>
+              It equips graduates with technical capabilities in data intelligence and analytics, 
+              critical thinking skills, and a strong theoretical foundation in education and social sciences.
+            </p>
+          </div>
+
+          <div class="whyBox">
+            <h3> Responsible Data-Driven Decisions for Social Impacts </h3>
+            <p>
+              As communities require solutions that address complex challenges, 
+              this integrated approach offers students the knowledge and skills to 
+              not only collect, measure, and report data—but to 
+              contextualize it, detect bias, and derive insights for responsible data-driven decisions.
+            </p>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="whyCol">
+          <div class="videoCard">
+            <div class="videoWrap">
+              <!-- Replace VIDEO_ID_2 -->
+              <iframe
+                src="https://www.youtube.com/embed/video#2"
+                title="Student & Career Experience Video"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+
+          <div class="whyBox">
+            <h3>Interdisciplinary Approach for Actionable Insights </h3>
+            <p>
+              In a collaboration with various departments at UM, students will learn and integrate knowledge from 
+              education, sociology, psychology, and communication for contextualized intelligence 
+              that drives real-world impact and change.
+            </p>
+          </div>          
+
+          <div class="whyBox">
+            <h3> Mentorship and Career Outcomes</h3>
+            <p>
+              Learn from expert faculty, collaborate with peers, and graduate with a strong portfolio,
+              internship experience, and career support across multiple industries.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- Featured Students band -->
+  <section class="band noimg" id="students">
+    <div class="wrap">
+      <h3 class="bandTitle"> Student Leaders</h3>
+
+      <div class="students">
+        <div class="student">
+          <div class="avatar">
+            <!-- Replace with headshot -->
+            <img src="Images/Yanni.png" alt="Student headshot: Yanni Tiimob" onerror="this.style.display='none'" />
+          </div>
+          <div class="pad2">
+            <strong> <a href="https://yannijtiimob.com/"> Yanni Tiimob </strong></a>
+          </div>
+        </div>
+
+        <div class="student">
+          <div class="avatar">
+            <img src="Images/Stella.png" alt="Student headshot: Stella York" onerror="this.style.display='none'" />
+          </div>
+          <div class="pad2">
+            <strong> <a href="https://sgy12.myportfolio.com/"> Stella York </strong></a>
+          </div>
+        </div>
+
+        <div class="student">
+          <div class="avatar">
+            <img src="Images/Liam.png" alt="Student headshot: Liam Szymonski" onerror="this.style.display='none'" />
+          </div>
+          <div class="pad2">
+            <strong> <a href="https://wcs773e9f.myportfolio.com/work"> Liam Szymonski </strong></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="currBtnRow">
+        <a class="btn orange" href="https://daisi.me/portfolio">Enter Student Portfolio Gallery › </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+ Miami Experience (Internships / Competitions / Study Abroad)
+ ========================= -->
+  <section class="section sectionAlt" id="U Experience">
+    <div class="wrap">
+      <div class="titleRow">
+        <div class="line"></div>
+        <h2>U Experience</h2>
+        <div class="line"></div>
+      </div>
+
+      <p class="centerNote">
+        Put your learning into practice through internships, global experiences, and competitions that strengthen your portfolio.
+      </p>
+
+      <div class="outcomesZigzag">
+
+        <!-- 1) Internships: LEFT image + RIGHT text -->
+        <div class="outcomeRow">
+          <div class="outcomeImage">
+            <img src="Images/Internship.png" alt="Student working on an analytics internship"
+                onerror="this.style.display='none'; this.parentElement.classList.add('outcomeImageFallback');" />
+          </div>
+
+          <div class="outcomeText">
+            <div class="outcomeTag">Internships</div>
+            <h3>Apply analytics in real teams</h3>
+            <p>
+              Gain hands-on experience in data intelligence, reporting, forecasting, evaluation, and data storytelling.
+              Many students graduate with a portfolio that includes work from internship projects.
+            </p>
+            <a class="btn orange" href="https://news.miami.edu/edu/stories/2026/01/daisi-student-spotlight.html">Explore internship examples <span aria-hidden="true">›</span></a>
+          </div>
+        </div>
+
+        <!-- 2) Study Abroad: LEFT text + RIGHT image -->
+        <div class="outcomeRow reverse">
+          <div class="outcomeImage">
+            <img src="Images/Global.png" alt="Students participating in a study abroad program"
+                onerror="this.style.display='none'; this.parentElement.classList.add('outcomeImageFallback');" />
+          </div>
+
+          <div class="outcomeText">
+            <div class="outcomeTag">Study Abroad</div>
+            <h3>Expand your perspective globally</h3>
+            <p>
+              Explore global data problems through short-term programs, semester options, or field projects.
+              Earn credit while learning how analytics is used across cultures and industries.
+            </p>
+            <a class="btn orange" href="https://studyabroad.miami.edu/">Plan your study abroad <span aria-hidden="true">›</span></a>
+          </div>
+        </div>
+
+        <!-- 3) Competitions: LEFT image + RIGHT text -->
+        <div class="outcomeRow">
+          <div class="outcomeImage">
+            <img src="Images/Hult3.png" alt="Student team presenting at a data competition"
+                onerror="this.style.display='none'; this.parentElement.classList.add('outcomeImageFallback');" />
+          </div>
+
+          <div class="outcomeText">
+            <div class="outcomeTag">Competitions</div>
+            <h3>Compete, present, and stand out</h3>
+            <p>
+              Participate in case competitions and data challenges where you solve real sponsor problems,
+              present to judges, and build standout portfolio artifacts that employers love.
+            </p>
+            <a class="btn orange" href="https://sites.education.miami.edu/sehdimpact/">View our featured event <span aria-hidden="true">›</span></a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <style> 
+  /* ===== Outcomes (zig-zag rows) ===== */
+  .outcomesZigzag{
+    display:grid;
+    gap: 14px;
+    margin-top: 16px;
+  }
+  
+  .outcomeRow{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    align-items: stretch;
+    background: rgba(255,255,255,.92);
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: var(--radius);
+    box-shadow: 0 14px 30px rgba(0,0,0,.12);
+    overflow:hidden;
+  }
+  
+  /* Flip order for the "reverse" row (Study Abroad) */
+  .outcomeRow.reverse .outcomeImage{ order: 2; }
+  .outcomeRow.reverse .outcomeText{ order: 1; }
+  
+  .outcomeImage{
+    min-height: 220px;
+    background: #e9e2d7;
+    position:relative;
+  }
+  
+  .outcomeImage img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  
+  /* fallback if image missing */
+  .outcomeImageFallback{
+    background:
+      radial-gradient(900px 380px at 20% 20%, rgba(242,106,33,.22), transparent 60%),
+      radial-gradient(900px 380px at 80% 0%, rgba(11,61,46,.20), transparent 60%),
+      linear-gradient(135deg, rgba(255,255,255,.75), rgba(255,255,255,.25));
+  }
+  
+  .outcomeText{
+    padding: 18px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  
+  .outcomeTag{
+    display:inline-flex;
+    align-items:center;
+    width: fit-content;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-weight: 900;
+    font-size: 16px;
+    color:#fff;
+    background: rgba(11,61,46,.92);
+    border: 1px solid rgba(0,0,0,.08);
+    margin-bottom: 10px;
+  }
+  
+  .outcomeText h3{
+    margin:0 0 6px;
+    font-size: 18px;
+    color:#15372d;
+  }
+  
+  .outcomeText p{
+    margin:0;
+    font-size: 16px;
+    color: var(--muted);
+    line-height: 1.6;
+    max-width: 60ch;
+  }
+  
+  .outcomeLink{
+    margin-top: 12px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-weight: 900;
+    font-size: 16px;
+    color:#1f3b31;
+    text-decoration:none;
+  }
+  
+  .outcomeLink:hover{ text-decoration:underline; }
+  
+  /* Responsive */
+  @media (max-width: 980px){
+    .outcomeRow{
+      grid-template-columns: 1fr;
+    }
+    .outcomeRow.reverse .outcomeImage,
+    .outcomeRow.reverse .outcomeText{
+      order: initial; /* stack naturally on mobile */
+    }
+    .outcomeImage{
+      min-height: 200px;
+    }
+  }  
+  </style> 
+
+  <!-- Outcomes + Curriculum (like screenshot) -->
+  <section class="section sectionAlt" id="careers">
+    <div class="wrap">
+      <div class="split">
+        <!-- Outcomes -->
+        <div class="panel">
+          <div class="panelHead">
+            <h3> Impact & Outcomes</h3>
+            <a class="btn orange" href="https://people.miami.edu/profile/467740bc277cca354e0fbb12b4f4ee1c" style="box-shadow:none;">Talk to an advisor › </a>
+          </div>
+          <div class="panelBody">
+            <div class="outcomesGrid">
+              <div class="metric">
+                <strong>5+</strong>
+                <span>Disciplines</span>
+              </div>
+              <div class="metric">
+                <strong> ∞ </strong>
+                <span>Impact</span>
+              </div>
+              <div class="metric">
+                <strong> 1 </strong>
+                <span>Mission</span>
+              </div>
+            </div>
+
+            <div class="employers">
+              <div><b>Our Mission</b></div>
+              <div class="logos" aria-label="Employer logos (placeholders)">
+                <span class="logoPill">NGO</span>
+                <span class="logoPill">Health</span>
+                <span class="logoPill">Sports</span>
+                <span class="logoPill">Tech</span>
+              </div>
+            </div>
+
+            <p style="margin:12px 0 0; color:var(--muted); font-size:16px;">
+              The DAISI program is designed to produce decision-makers who can 
+              collect, analyze, and use data to generate insight that increases social impact.
+            </p>
+          </div>
+        </div>
+
+        <!-- Curriculum Box -->
+        <div class="panel" id="curriculum">
+          <div class="panelHead" style="background: linear-gradient(90deg, rgba(11,61,46,.12), rgba(242,106,33,.10));">
+            <h3>Explore Our Curriculum</h3>
+            <span style="color:var(--muted); font-size:16px; font-weight:700;"> cross-disciplinary </span>
+          </div>
+          <div class="panelBody">
+            <ul class="currList">
+              <li>
+                <span>Foundation/Core Courses </span>
+                <span class="chev">›</span>
+              </li>
+              <li>
+                <span>Diversity & Practicum </span>
+                <span class="chev">›</span>
+              </li>
+              <li>
+                <span>Advanced Courses </span>
+                <span class="chev">›</span>
+              </li>
+              <li>
+                <span>Eeletives </span>
+                <span class="chev">›</span>
+              </li>
+            </ul>
+
+            <div class="currBtnRow">
+              <a class="btn orange" href="https://bulletin.miami.edu/undergraduate-academic-programs/education-human-development/educational-psychological-studies/data-analytics-and-intelligence-bs/#curriculumtext">View Full Curriculum ›</a>
+            </div>
+
+            <p style="margin:12px 0 0; color:var(--muted); font-size:16px;">
+              Total credit hours: 120
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="finalCTA" id="apply">
+    <div class="wrap">
+      <h2>Ready to Make an Impact?</h2>
+      <p> Join the DAISI program and become part of a community dedicated to using data for social good. Your journey to meaningful change starts here.</p>
+      <div class="ctaRow">
+        <a class="btn orange" href="#apply">Apply Now</a>
+        <a class="btn outline" href="#contact">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footGrid">
+        <div>
+          <div class="footTitle">Quick Links</div>
+          <div class="footLinks">
+            <a href="#about">About</a>
+            <a href="#curriculum">Curriculum</a>
+            <a href="#apply">Apply</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="footTitle">Contact</div>
+          <div style="opacity:.9;">
+            125 University Ave, Coral Gables, FL 33124<br/>
+            info@miami.edu<br/>
+            (305) 555-1234
+          </div>
+        </div>
+
+        <div>
+          <div class="footTitle">Follow</div>
+          <div class="social">
+            <a class="soc" href="#" aria-label="Facebook">f</a>
+            <a class="soc" href="#" aria-label="Twitter/X">x</a>
+            <a class="soc" href="#" aria-label="LinkedIn">in</a>
+            <a class="soc" href="#" aria-label="YouTube">▶</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:14px; padding-top:12px; border-top:1px solid rgba(255,255,255,.16); opacity:.85;">
+        © <span id="year"></span> University of Miami • DAISI Program
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
