@@ -124,21 +124,27 @@
 
     /* ===== New Hero (like welcome.miami.edu) ===== */
     .heroNew{
-    position:relative;
-    width:100%;
-    min-height: 480px;
-    background:
-        linear-gradient(180deg, rgba(0,0,0,.36), rgba(0,0,0,.32)),
-        url("https://drive.google.com/thumbnail?id=1GK3XHzDNa2gw9tC5Xt-3URE-v2DHzeha") center/cover no-repeat; 
-    display:flex;
-    align-items:center;
-    justify-content:center;
+      position: relative;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      background-image: url("Image/background.png"); /* <-- replace with your image */
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
     }
 
     .heroNew .heroOverlay{
-    position:absolute;
-    inset:0;
-    background: rgba(0,0,0,.36);
+      .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 40, 20, 0.55); /* dark green overlay */
+      backdrop-filter: blur(2px);
+}
     }
 
     .heroContent{
@@ -254,9 +260,74 @@
     .fact strong{display:block; color:#1b3b31; font-size:13px}
     .fact span{display:block; color:var(--muted); font-size:13px; margin-top:3px}
 
+  /* ===== Career Outcomes Section ===== */
+
+  .career-outcomes{
+    padding:80px 20px;
+    background:#f7f7f7;
+    text-align:center;
+  }
+
+  .career-title{
+    font-size:32px;
+    font-weight:600;
+    text-align:center;
+    margin-bottom:40px;
+    color:#1c1c1c;
+  }
+
+  .career-grid{
+    max-width:1100px;
+    margin:auto;
+    display:flex;
+    justify-content:center;
+    gap:0;
+    background:white;
+    border:1px solid #e5e5e5;
+  }
+
+  .career-box{
+    flex:1;
+    padding:20px 20px;
+    border-right:1px solid #e5e5e5;
+  }
+
+  .career-box:last-child{
+    border-right:none;
+  }
+
+  .career-number{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:10px;
+  }
+
+  .career-number.orange{
+    color:#F47321; /* UM orange */
+  }
+
+  .career-number.green{
+    color:#005030; /* UM green */
+  }
+
+  .career-number.small{
+    font-size:22px;
+    font-weight:600;
+  }
+
+  .career-label{
+    font-size:16px;
+    color:#666;
+  }
+
+  .career-employers span{
+    margin:0 10px;
+    font-weight:600;
+    color:#333;
+  }
 
 
-/* ===== Why Choose (2-column video + text) ===== */
+  /* ===== Why Choose (2-column video + text) ===== */
   .whyTwoCol{
     display:grid;
     grid-template-columns: 1fr 1fr;
@@ -321,11 +392,6 @@
       grid-template-columns: 1fr;
     }
   }
-
-
-
-
-
 
     /* ====== Featured Students band (image strip) ====== */
     .band{
@@ -586,7 +652,7 @@
           <img src="Image/um-logo-gray-bg.png" alt="University of Miami" class="umLogo" />
           <div class="brandText">
             <strong>UNIVERSITY OF MIAMI</strong>
-            <span>DAISI Program</span>
+            <span>School of Education and Human Development</span>
           </div>
         </a>
 
@@ -597,13 +663,13 @@
           <a href="#contact">Contact</a>
           <a class="btn orange" href="#apply">Apply Now</a>
         </div>
+
       </div>
     </div>
   </div>
 
-
   <!-- Hero  -->
-<header class="heroNew" id="top">
+  <header class="heroNew" id="top">
     <div class="heroOverlay"></div>
   
     <div class="heroContent wrap">
@@ -617,7 +683,6 @@
     </div>
   </header>
   
-
   <!-- About (picture-style cards) -->
   <section class="section sectionAlt" id="about">
     <div class="wrap">
@@ -631,7 +696,33 @@
         Our <b>DAISE</b> program prepare you with skills to analyze and contextualize data for responsible, impactful outcomes —
         through hands-on projects, modern tools, and close mentoring.
       </p>
+
+      <div class="career-grid">
   
+        <div class="career-box">
+          <div class="career-number orange">33.5% &#11014 </div>
+          <div class="career-label"> More positions for data-driven roles are projected through 2034.
+            -- U.S. Bureau of Labor Statistics</div>
+        </div>
+    
+        <div class="career-box">
+          <div class="career-number orange">85K+</div>
+          <div class="career-label">Average Starting Salary for BSBA in data analytics & intelligence graduates.</div>
+        </div>
+
+        <div class="career-box">
+          <div class="career-number small">Top Employers</div>
+          <div class="career-employers">
+            <span class="logoPill">NGO</span>
+            <span class="logoPill">Health</span>
+            <span class="logoPill">Sports</span>
+            <span class="logoPill">Business</span>
+            <span class="logoPill">Tech</span>
+          </div>
+          </div>
+          
+        </div>
+
       <div class="aboutCards">
         <!-- Card 1 -->
         <article class="aboutCard">
@@ -785,6 +876,7 @@
   }
   
   </style> 
+
 
 
   <!-- Why Choose Our Program (2-column video stories) -->
@@ -1122,15 +1214,7 @@
               </div>
             </div>
 
-            <div class="employers">
-              <div><b>Our Mission</b></div>
-              <div class="logos" aria-label="Employer logos (placeholders)">
-                <span class="logoPill">NGO</span>
-                <span class="logoPill">Health</span>
-                <span class="logoPill">Sports</span>
-                <span class="logoPill">Tech</span>
-              </div>
-            </div>
+
 
             <p style="margin:12px 0 0; color:var(--muted); font-size:16px;">
               The DAISI program is designed to produce decision-makers who can 
