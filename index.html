@@ -277,7 +277,7 @@
   }
 
   .career-grid{
-    max-width:1100px;
+    max-width:980px;
     margin:auto;
     display:flex;
     justify-content:center;
@@ -298,7 +298,7 @@
   }
 
   .career-number{
-    font-size:48px;
+    font-size:40px;
     font-weight:700;
     margin-bottom:10px;
   }
@@ -327,6 +327,12 @@
     color:#333;
   }
 
+    /* Responsive */
+    @media (max-width: 980px){
+    .career-grid{
+      grid-template-columns: 1fr;
+    }
+  }
 
   /* ===== Why Choose (2-column video + text) ===== */
   .whyTwoCol{
@@ -703,7 +709,7 @@
       <div class="career-grid">
   
         <div class="career-box">
-          <div class="career-number orange">33.5% &#11014 </div>
+          <div class="career-number orange">34% &#11014 </div>
           <div class="career-label"> Data-driven roles are projected through 2034.
             -- <a href= "https://www.bls.gov/ooh/math/data-scientists.htm"> U.S. Bureau of Labor Statistics </a></div>
         </div>
