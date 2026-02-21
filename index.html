@@ -656,14 +656,14 @@
           </div>
         </a>
 
-        <div class="links" aria-label="Primary navigation">
-          <a href="#about">About</a>
-          <a href="#students">U Experience</a>
-          <a href="#impact">Impact</a>
-          <a href="#contact">Contact</a>
-          <a class="btn orange" href="#apply">Apply Now</a>
-        </div>
-
+        <!-- Promise + CTAs -->
+        <div class="ai-footer">    
+          <div class="ai-cta-row">
+            <a class="ai-btn ai-btn-primary" href="#about">Program</a>
+            <a class="ai-btn ai-btn-secondary" href="#applied-intelligence">Career</a>
+            <a class="ai-btn ai-btn-ghost" href="#students">Students</a>
+          </div>
+        </div>  
       </div>
     </div>
   </div>
@@ -674,11 +674,13 @@
   
     <div class="heroContent wrap">
       <h1>Data Analytics & Intelligence for Social Impact B.S. (DAISI)</h1>
-      <p> Transform data into decisions that drive meaningful change. </p>
-  
+
       <div class="heroActions">
-        <a class="btn orange" href="#apply">Apply Now</a>
-        <a class="btn green" href="#contact">Request Info</a>
+        <a class="btn orange" href="https://admissions.miami.edu/undergraduate/index.html?utm_source=Mailers&utm_medium=Print&utm_campaign=FromPrint">Apply Now</a>
+        <a class="btn green" href="https://admissions.miami.edu/undergraduate/about/contact-us/index.html">Contact Us</a>
+        <p class="ai-promise">
+          <strong>One program. Multiple pathways. Real-world impact.</strong>
+        </p>
       </div>
     </div>
   </header>
@@ -702,22 +704,23 @@
         <div class="career-box">
           <div class="career-number orange">33.5% &#11014 </div>
           <div class="career-label"> More positions for data-driven roles are projected through 2034.
-            -- U.S. Bureau of Labor Statistics</div>
+            -- <a href= "https://www.bls.gov/ooh/math/data-scientists.htm"> U.S. Bureau of Labor Statistics </a></div>
         </div>
     
         <div class="career-box">
           <div class="career-number orange">85K+</div>
-          <div class="career-label">Average Starting Salary for BSBA in data analytics & intelligence graduates.</div>
+          <div class="career-label">Average Starting Salary for BSBA in data analytics & intelligence.
+            -- <a href= "https://builtin.com/salaries/us/data-analyst" > builtin</a></div>
         </div>
 
         <div class="career-box">
           <div class="career-number small">Top Employers</div>
           <div class="career-employers">
-            <span class="logoPill">NGO</span>
-            <span class="logoPill">Health</span>
-            <span class="logoPill">Sports</span>
-            <span class="logoPill">Business</span>
-            <span class="logoPill">Tech</span>
+            <li class="logoPill">🏀 Sports, Media & Entertainment Analytics</li>
+            <li class="logoPill">🏥 Healthcare & Public Health </li>
+            <li class="logoPill">📊 Consulting & Business Intelligence </li>
+            <li class="logoPill">🌍 NGOs, Education & Organizations </li>
+            <li class="logoPill">Psychological & Behavioral Analytics </li>
           </div>
           </div>
           
@@ -734,7 +737,6 @@
               <div class="aboutTag"> Contextualized Learning</div>
               <h3> Collaborative & Interdisciplinary </h3>
               <p> Customize your studies with a selection of courses drawn from various disciplines across education, health, and community systems.</p>
-              <a class="aboutBtn" href="https://bulletin.miami.edu/undergraduate-academic-programs/education-human-development/educational-psychological-studies/data-analytics-and-intelligence-bs/#text">Explore Curriculum <span aria-hidden="true">›</span></a>
             </div>
           </div>
         </article>
@@ -748,7 +750,7 @@
               <div class="aboutTag">Close Mentoring</div>
               <h3>Learn from Expert Faculty</h3>
               <p>Get guidance from outstanding researchers and practitioners working at the cutting edge of analytics, AI and Social Impacts.</p>
-              <a class="aboutBtn" href="https://www.edu.miami.edu/people/faculty/index.html">Meet Our Faculty <span aria-hidden="true">›</span></a>
+              
             </div>
           </div>
         </article>
@@ -762,7 +764,6 @@
               <div class="aboutTag">Real Impact</div>
               <h3>By Students, For Students </h3>
               <p> Build your network, skillsets and hands-on experience through collaboration, internships, competitions, and more.</p>
-              <a class="aboutBtn" href="https://news.miami.edu/edu/stories/2026/01/daisi-student-spotlight.html">Meet Our Students <span aria-hidden="true">›</span></a>
             </div>
           </div>
         </article>
@@ -789,13 +790,13 @@
   
   .aboutMedia{
     position:relative;
-    height: 260px;
+    height: 220px;
     background: #e9e2d7;
   }
   
   .aboutMedia img{
     width:100%;
-    height:100%;
+    height:60%;
     object-fit:cover;
     display:block;
   }
@@ -872,24 +873,389 @@
   /* Responsive */
   @media (max-width: 980px){
     .aboutCards{ grid-template-columns: 1fr; }
-    .aboutMedia{ height: 240px; }
+    .aboutMedia{ height: 120px; }
   }
   
   </style> 
 
+<!-- =========================
+     Applied Intelligence Section
+     Drop into your program homepage (HTML)
+     ========================= -->
+<section class="section sectionAlt" id="applied-intelligence">
+  <div class="wrap">
+    <div class="titleRow">
+      <div class="line"></div>
+      <h2 class="ai-title">
+        Why DAISI at School of Education and Human Development
+      </h2>
+      <div class="line"></div>
+    </div>
 
+  <div class="ai-container">
+    <header class="ai-header">
+      <p class="ai-subtitle">
+        Our interdisciplinary program empowers students to turn <em>data</em> into <em>insight</em>, insight into <em>action</em>,
+        and action into <em>impact</em>.
+      </p>
+    </header>
+
+    <!-- Pathway Cards -->
+    <div class="ai-grid">
+      <!-- Card 1 -->
+      <article class="ai-card">
+        <div class="ai-card-top">
+          <div class="ai-icon" aria-hidden="true">🏀</div>
+          <div>
+            <h3 class="ai-card-title">When Data meet Sports</h3>
+          </div>
+        </div>
+    
+        <ul class="ai-bullets">
+          <li>Sports analytics & visualization</li>
+          <li>Performance tracking </li>
+          <li>AI-supported decision tools </li>
+        </ul>
+    
+        <div class="ai-tags">
+          <span class="ai-tag">Sports</span>
+          <span class="ai-tag">Health</span>
+          <span class="ai-tag">Tech</span>
+        </div>
+    
+      </article>
+    
+      <!-- Card 2 -->
+      <article class="ai-card">
+        <div class="ai-card-top">
+          <div class="ai-icon" aria-hidden="true">🧠</div>
+          <div>
+            <h3 class="ai-card-title"> When Data meet Psychology</h3>
+          </div>
+        </div>
+    
+        <ul class="ai-bullets">
+          <li>Psychology-informed Design</li>
+          <li>Ethical and responsible AI</li>
+          <li>Data-informed intervention planning</li>
+        </ul>
+    
+        <div class="ai-tags">
+          <span class="ai-tag">Counseling</span>
+          <span class="ai-tag">Wellbeing</span>
+          <span class="ai-tag">NGO</span>
+        </div>
+    
+      </article>
+    
+          <!-- Card 3 -->
+          <article class="ai-card">
+            <div class="ai-card-top">
+              <div class="ai-icon" aria-hidden="true">📚</div>
+              <div>
+                <h3 class="ai-card-title">When Data meet Education</h3>
+              </div>
+            </div>
+    
+            <ul class="ai-bullets">
+              <li>Learning analytics & intelligence</li>
+              <li>AI-assisted teaching tools</li>
+              <li>Evidence-based design</li>
+            </ul>
+    
+            <div class="ai-tags">
+              <span class="ai-tag">Education</span>
+              <span class="ai-tag">Business</span>
+              <span class="ai-tag">EdTech</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="currBtnRow">   
+          <div class="ai-cta-row">
+            <a class="btn orange" href="https://www.edu.miami.edu/people/faculty/index.html">    Meet our Faculty ›     </a>
+            <a class="btn green" href="https://www.edu.miami.edu/our-work/projects/index.html">    Expore our Projects ›    </a>
+            <a class="btn orange" href="https://bulletin.miami.edu/undergraduate-academic-programs/education-human-development/educational-psychological-studies/data-analytics-and-intelligence-bs/#text"> Check our Curriculum › </a>
+          </div>
+        </div>  
+    </div>
+</section>
+    
+    <style>
+      /* =========================
+         Applied Intelligence Section (CSS)
+         ========================= */
+    
+      .ai-container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+    
+      .ai-header {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+    
+      .ai-title {
+        margin: 0 0 10px;
+        font-size: clamp(26px, 3vw, 38px);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+      }
+    
+      .ai-accent-orange {
+        color: #F26B21; /* adjust to your brand orange */
+      }
+    
+      .ai-subtitle {
+        margin: 0 auto;
+        max-width: 920px;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        opacity: 0.92;
+      }
+    
+      .ai-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 16px;
+        margin-top: 22px;
+      }
+    
+      .ai-card {
+        grid-column: span 12;
+        background: rgba(255, 255, 255, 0.85);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 18px;
+        padding: 18px 18px 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        transition: transform 180ms ease, box-shadow 180ms ease;
+        backdrop-filter: blur(8px);
+      }
+    
+      .ai-card:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 14px 40px rgba(0, 0, 0, 0.10);
+      }
+    
+      .ai-card-top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+    
+      .ai-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        display: grid;
+        place-items: center;
+        background: rgba(9, 60, 61, 0.08);
+        font-size: 22px;
+      }
+    
+      .ai-card-title {
+        margin: 0;
+        font-size: 1.2rem;
+        line-height: 1.2;
+      }
+    
+      .ai-card-kicker {
+        margin: 3px 0 0;
+        font-size: 0.95rem;
+        opacity: 0.8;
+      }
+    
+      .ai-card-desc {
+        margin: 10px 0 12px;
+        line-height: 1.55;
+        opacity: 0.95;
+      }
+    
+      .ai-bullets {
+        margin: 0 0 12px;
+        padding-left: 18px;
+        line-height: 1.6;
+      }
+    
+      .ai-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin: 6px 0 14px;
+      }
+    
+      .ai-tag {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: rgba(9, 60, 61, 0.08);
+        border: 1px solid rgba(9, 60, 61, 0.10);
+        white-space: nowrap;
+      }
+    
+      .ai-careers {
+        border-top: 1px solid rgba(0, 0, 0, 0.08);
+        padding-top: 12px;
+      }
+    
+      .ai-careers-label {
+        font-weight: 600;
+        margin-bottom: 4px;
+      }
+    
+      .ai-careers-text {
+        margin: 0;
+        line-height: 1.55;
+        opacity: 0.92;
+      }
+    
+      .ai-footer {
+        margin-top: 18px;
+        text-align: center;
+      }
+    
+      .ai-promise {
+        margin: 18px auto 14px;
+        max-width: 900px;
+        line-height: 1.6;
+      }
+    
+      .ai-cta-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin: 14px 0 10px;
+      }
+    
+      .ai-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        border: 1px solid transparent;
+        transition: transform 150ms ease, opacity 150ms ease, border-color 150ms ease;
+      }
+    
+      .ai-btn:hover {
+        transform: translateY(-1px);
+        opacity: 0.95;
+      }
+    
+      .ai-btn-primary {
+        background: #F26B21; /* brand orange */
+        color: #fff;
+      }
+    
+      .ai-btn-secondary {
+        background: rgba(9, 60, 61, 0.12);
+        border-color: rgba(9, 60, 61, 0.20);
+        color: #083b3c;
+      }
+    
+      .ai-btn-ghost {
+        background: transparent;
+        border-color: rgba(0, 0, 0, 0.18);
+        color: inherit;
+      }
+    
+      .ai-details {
+        max-width: 980px;
+        margin: 10px auto 0;
+        text-align: left;
+        background: rgba(255, 255, 255, 0.72);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 16px;
+        padding: 12px 14px;
+      }
+    
+      .ai-summary {
+        cursor: pointer;
+        font-weight: 700;
+        list-style: none;
+      }
+      .ai-summary::-webkit-details-marker { display: none; }
+    
+      .ai-details[open] .ai-summary {
+        margin-bottom: 10px;
+      }
+    
+      .ai-details-body {
+        padding-bottom: 6px;
+      }
+    
+      .ai-mini-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 12px;
+      }
+    
+      .ai-mini {
+        grid-column: span 12;
+        border-radius: 14px;
+        background: rgba(9, 60, 61, 0.06);
+        border: 1px solid rgba(9, 60, 61, 0.10);
+        padding: 12px;
+      }
+    
+      .ai-mini h4 {
+        margin: 0 0 6px;
+        font-size: 1rem;
+      }
+    
+      .ai-mini p {
+        margin: 0;
+        line-height: 1.55;
+        opacity: 0.92;
+      }
+    
+      .ai-note {
+        margin: 10px 0 0;
+        font-size: 0.95rem;
+        opacity: 0.85;
+      }
+    
+      .ai-micro {
+        margin: 12px 0 0;
+        font-size: 0.95rem;
+        opacity: 0.9;
+        display: inline-flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+      }
+    
+      .ai-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 999px;
+        background: rgba(9, 60, 61, 0.55);
+        display: inline-block;
+      }
+    
+      /* Responsive columns */
+      @media (min-width: 860px) {
+        .ai-card { grid-column: span 4; }
+        .ai-mini { grid-column: span 6; }
+      }
+    </style>
 
   <!-- Why Choose Our Program (2-column video stories) -->
   <section class="section" id="why">
     <div class="wrap">
       <div class="titleRow">
         <div class="line"></div>
-        <h2>Why Choose Our Program?</h2>
+        <h2> Our Mission </h2>
         <div class="line"></div>
       </div>
 
       <p class="centerNote">
-        Our Mission: Producing Decision-Makers Who Drive Change
+        <strong> Producing Decision-Makers Who Drive Change </strong>
 
       <div class="whyTwoCol">
         <!-- LEFT COLUMN -->
@@ -967,7 +1333,7 @@
   <!-- Featured Students band -->
   <section class="band noimg" id="students">
     <div class="wrap">
-      <h3 class="bandTitle"> Student Leaders</h3>
+      <h3 class="bandTitle"> Our Student Leaders</h3>
 
       <div class="students">
         <div class="student">
@@ -1012,12 +1378,12 @@
     <div class="wrap">
       <div class="titleRow">
         <div class="line"></div>
-        <h2>U Experience</h2>
+        <h2>Put Your Learning Into Practice</h2>
         <div class="line"></div>
       </div>
 
       <p class="centerNote">
-        Put your learning into practice through internships, global experiences, and competitions that strengthen your portfolio.
+        Through internships, global experiences, and competitions that strengthen your portfolio.
       </p>
 
       <div class="outcomesZigzag">
@@ -1188,79 +1554,9 @@
   }  
   </style> 
 
-  <!-- Outcomes + Curriculum (like screenshot) -->
-  <section class="section sectionAlt" id="impact">
-    <div class="wrap">
-      <div class="split">
-        <!-- Outcomes -->
-        <div class="panel">
-          <div class="panelHead">
-            <h3> Impact & Outcomes</h3>
-            <a class="btn orange" href="https://people.miami.edu/profile/467740bc277cca354e0fbb12b4f4ee1c" style="box-shadow:none;">Talk to an advisor › </a>
-          </div>
-          <div class="panelBody">
-            <div class="outcomesGrid">
-              <div class="metric">
-                <strong>5+</strong>
-                <span>Disciplines</span>
-              </div>
-              <div class="metric">
-                <strong> ∞ </strong>
-                <span>Impact</span>
-              </div>
-              <div class="metric">
-                <strong> 1 </strong>
-                <span>Mission</span>
-              </div>
-            </div>
 
 
-
-            <p style="margin:12px 0 0; color:var(--muted); font-size:16px;">
-              The DAISI program is designed to produce decision-makers who can 
-              collect, analyze, and use data to generate insight that increases social impact.
-            </p>
-          </div>
-        </div>
-
-        <!-- Curriculum Box -->
-        <div class="panel" id="curriculum">
-          <div class="panelHead" style="background: linear-gradient(90deg, rgba(11,61,46,.12), rgba(242,106,33,.10));">
-            <h3>Explore Our Curriculum</h3>
-            <span style="color:var(--muted); font-size:16px; font-weight:700;"> cross-disciplinary </span>
-          </div>
-          <div class="panelBody">
-            <ul class="currList">
-              <li>
-                <span>Foundation/Core Courses </span>
-                <span class="chev">›</span>
-              </li>
-              <li>
-                <span>Diversity & Practicum </span>
-                <span class="chev">›</span>
-              </li>
-              <li>
-                <span>Advanced Courses </span>
-                <span class="chev">›</span>
-              </li>
-              <li>
-                <span>Eeletives </span>
-                <span class="chev">›</span>
-              </li>
-            </ul>
-
-            <div class="currBtnRow">
-              <a class="btn orange" href="https://bulletin.miami.edu/undergraduate-academic-programs/education-human-development/educational-psychological-studies/data-analytics-and-intelligence-bs/#curriculumtext">View Full Curriculum ›</a>
-            </div>
-
-            <p style="margin:12px 0 0; color:var(--muted); font-size:16px;">
-              Total credit hours: 120
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+        
 
   <!-- Final CTA -->
   <section class="finalCTA" id="apply">
@@ -1268,8 +1564,7 @@
       <h2>Ready to Make an Impact?</h2>
       <p> Join the DAISI program and become part of a community dedicated to using data for social good. Your journey to meaningful change starts here.</p>
       <div class="ctaRow">
-        <a class="btn orange" href="#apply">Apply Now</a>
-        <a class="btn outline" href="#contact">Contact Us</a>
+        <a class="btn orange" href="https://admissions.miami.edu/undergraduate/index.html?utm_source=Mailers&utm_medium=Print&utm_campaign=FromPrint">Apply Now</a>
       </div>
     </div>
   </section>
