@@ -733,32 +733,37 @@
         through hands-on projects, modern tools, and close mentoring.
       </p>
 
-      <div class="career-grid">
-  
-        <div class="career-box">
-          <div class="career-number orange">34% &#11014 </div>
-          <div class="career-label"> Data-driven roles are projected through 2034.
-            -- <a href= "https://www.bls.gov/ooh/math/data-scientists.htm"> U.S. Bureau of Labor Statistics </a></div>
-        </div>
-    
-        <div class="career-box">
-          <div class="career-number orange">85K+</div>
-          <div class="career-label">Average Starting Salary for BSBA in data analytics & intelligence.
-            -- <a href= "https://builtin.com/salaries/us/data-analyst" > builtin</a></div>
-        </div>
-
-        <div class="career-box">
-          <div class="career-number small">Top Employers</div>
-          <div class="career-employers">
+      <div class="stats-grid">
+      
+          <!-- Card 1 -->
+          <div class="stat-card">
+            <div class="stat-number orange">34% ↑</div>
+            <p>
+              Data-driven roles are projected through 2034.
+              <span class="source"><a href= "https://www.bls.gov/ooh/math/data-scientists.htm"> U.S. Bureau of Labor Statistics</a></span>
+            </p>
+          </div>
+      
+          <!-- Card 2 -->
+          <div class="stat-card">
+            <div class="stat-number orange">85K+</div>
+            <p>
+              Average starting salary for data analytics & intelligence.
+              <span class="source"><a href= "https://builtin.com/salaries/us/data-analyst" > BuiltIn</a></span>
+            </p>
+          </div>
+      
+          <!-- Card 3 -->
+          <div class="stat-card">
+            <h3>Top Employers</h3>
             <ul style="list-style-type: none; padding: 0; margin: 0;">
-              <li class="logoPill">🏀 Sports, Media & Entertainment Analytics</li>
-              <li class="logoPill">🌐 Consulting & Business Intelligence </li>
-              <li class="logoPill">🌍 NGOs, Healthcare & Organizations </li>
-          </ul>
-
+              <li class="logoPill">🏀 Sports, Media & Performance Intelligence</li>
+              <li class="logoPill">🌐 Consulting & Human-AI Innovation </li>
+              <li class="logoPill">🌍 Health, Social Impact & Policy </li>
+            </ul>
+      
           </div>
-          </div>
-          
+      
         </div>
 
         <div class="daisi-human__pills" role="list" aria-label="Domains">
@@ -816,6 +821,82 @@
   </section>
 
   <style> 
+   /* career stats */
+
+    /* MOBILE FIRST: stacked vertically */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 1200px;
+      margin:auto;
+    }
+
+    /* Card design */
+    .stat-card {
+      background:white;
+      border-radius:14px;
+      padding:12px;
+      box-shadow:0 8px 18px rgba(0,0,0,0.06);
+      text-align:left;
+      min-height: 180px;   /* adjust as needed */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* Numbers */
+    .stat-number {
+      font-size:40px;
+      font-weight:800;
+      margin-bottom:6px;
+    }
+
+    .orange {
+      color:#f47321; /* UM Orange */
+    }
+
+    /* Text */
+    .stat-card p {
+      font-size:16px;
+      line-height:1.5;
+      color:#555;
+    }
+
+    .source {
+      display:block;
+      margin-top:6px;
+      font-size:14px;
+      color:#888;
+    }
+
+    /* Employer Pills */
+    .employers h3 {
+      margin-bottom:16px;
+      font-size:18px;
+    }
+
+    .pill {
+      background:#f1f4f3;
+      border-radius:999px;
+      padding:12px 18px;
+      margin-bottom:10px;
+      font-weight:600;
+    }
+
+    /* ---------- TABLET ---------- */
+    @media (min-width:768px) {
+      .stats-grid {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    /* ---------- DESKTOP ---------- */
+    @media (min-width:1024px) {
+      .stats-grid {
+        grid-template-columns: repeat(3,1fr);
+      }
+    }
+
   /* ===== About (picture cards) ===== */
   .aboutCards{
     display:grid;
